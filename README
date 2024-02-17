@@ -1,0 +1,27 @@
+To simulate data for the topic modelling paper use these scripts:
+
+python generator.py Theta divergence_time number_loci
+
+to run the script you need the manyloci.py and a modified version of ms (see instructions
+on https://github.com/pbeerli/divergencesupplement/tree/main/simulations)
+to then generate the inputfiles for the topiccontml.py (see https://github.com/TaraKhodaei/TopicContml)
+you will need to run migrate-modern-to-single-locus.py on each of the files generated with generator.py
+
+An example:
+
+mkdir sim_100_0.01_10
+cp generator.py sim_100_0.01_10
+cp ms sim_100_0.01_10
+cp manyloci.py sim_100_0.01_10
+cp migrate-modern-to-single-locus.py sim_100_0.01_10
+cd sim_100_0.01_100
+python generator.py 0.1 0.01 10
+# this will generate 100 datafiles (infile...)
+# each with 10 loci 
+# for each datafile run
+# python migrate-modern-to-single-locus.py infile_...
+# for example:
+python migrate-modern-to-single-locus.py infile_72_0.1_0.01_10
+# this will create a directory siminfile_72_0.1_0.01_10
+# that then can be used for run with topiccontml.py
+# python topiccontml.py -f siminfile_72_0.1_0.01_10
