@@ -25,3 +25,6 @@ python migrate-modern-to-single-locus.py infile_72_0.1_0.01_10
 # this will create a directory siminfile_72_0.1_0.01_10
 # that then can be used for run with topiccontml.py
 # python topiccontml.py -f siminfile_72_0.1_0.01_10
+
+We also added an additional_scripts folder containing coverter scripts for the biological datasets used in the manuscript.
+

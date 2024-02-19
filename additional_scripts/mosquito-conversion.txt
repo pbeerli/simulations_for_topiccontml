@@ -1,0 +1,12 @@
+For conversion for topiccontml of original mosquito fasta files
+in
+use
+# assume that all the fasta files are in a directory e.g. autosomes-orig
+cd autosomes-orig  
+mkdir autosomes     # create a subdirectory to contain the converted files
+cd autosomes
+ls .. | grep .fa | awk '{print "fasta2phylip", "../"$1, "locus"NR-1".txt"}'
+#now proceed with
+#python topiccontml.py --help to get an overview of potential analyses
+# for example get the best tree using non-aligned data
+python topiccontml.py -f ../autosomes -nl 67317 -gt rm_row

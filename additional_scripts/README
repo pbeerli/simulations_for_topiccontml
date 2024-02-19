@@ -1,0 +1,17 @@
+This directory contains scripts that we used to convert the data;
+
+migrate-to-single-locus.py: conversion of the bird dataset (see data section) to single locus phylip files using a migrate infile 
+
+mammals-i2r.py: transforms the interleaved multilocus phylip data format for the mammals into files in a folder, these files are non-interleaved and one phylip file per locus.
+
+mosquito-conversion.txt: contains instructions how to convert the mosquito fasta files into files readable by topiccontml.py (the instructions assume that the reader is familiar with UNIX)
+
+The simulation analysis is hardcoded into the program topiccontml.py using
+for example:
+python topiccontml.py -f sim_100_0.0_100 -sd 0.0 -m 3 -gt rm_row -nl 100
+python topiccontml.py -f sim_100_0.01_100 -sd 0.01 -m 3 -gt rm_row -nl 100
+
+The simulated data assumes a rooted tree ((a,c),(b,d)) as the true tree simulated with various split times between the groups (a,c) and (b,d) [-sd tau], we only concerned with unrooted topologies ((a,c),b,d) for the comparison
+the first example uses a population split at tau=0 , the second at a tau=0.01 (see the table in the manuscript)
+
+
