@@ -1,0 +1,21 @@
+# topiccontml simulation study using dawg
+
+Tree.Tree = theTree
+
+Root.Length = 1000
+
+Subst.Model = "GTR"
+Subst.Freqs  = 0.2, 0.3, 0.3, 0.2
+Subst.Params = 2.0, 1.0, 3.0, 1.0, 1.0, 1.0
+
+
+Indel.Model = "GEO"
+Indel.Rate = 0.2
+Indel.Max = 2000
+Indel.Params = 12
+
+Sim.Seed = 1345123
+Sim.Reps = 2
+
+Output.File = simdatawg.phy
+

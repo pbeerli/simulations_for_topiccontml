@@ -1,0 +1,12 @@
+python runner.py 1 14tiptree.tre
+python runner.py 2 14tiptree.tre
+python runner.py 5 14tiptree.tre
+python runner.py 10 14tiptree.tre
+python runner.py 20 14tiptree.tre
+python runner.py 50 14tiptree.tre
+python runner.py 100 14tiptree.tre
+python runner.py 200 14tiptree.tre
+python runner.py 500 14tiptree.tre
+python runner.py 1000 14tiptree.tre 
+
+

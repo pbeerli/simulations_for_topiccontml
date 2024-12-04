@@ -1,0 +1,32 @@
+python wrf.py 7tiptree.tre outtree1-* | grep RF=
+python wrf.py 7tiptree.tre outtree2-* | grep RF=
+python wrf.py 7tiptree.tre outtree5-* | grep RF=
+python wrf.py 7tiptree.tre outtree10-* | grep RF=
+python wrf.py 7tiptree.tre outtree20-* | grep RF=
+python wrf.py 7tiptree.tre outtree50-* | grep RF=
+python wrf.py 7tiptree.tre outtree100-* | grep RF=
+python wrf.py 7tiptree.tre outtree200-* | grep RF=
+python wrf.py 7tiptree.tre outtree500-* | grep RF=
+python wrf.py 7tiptree.tre outtree1000-* | grep RF=
+#
+python wrf.py 7tiptree.tre outtree1nogap* | grep RF=
+python wrf.py 7tiptree.tre outtree2nogap* | grep RF=
+python wrf.py 7tiptree.tre outtree5nogap* | grep RF=
+python wrf.py 7tiptree.tre outtree10nogap* | grep RF=
+python wrf.py 7tiptree.tre outtree20nogap* | grep RF=
+python wrf.py 7tiptree.tre outtree50nogap* | grep RF=
+python wrf.py 7tiptree.tre outtree100nogap* | grep RF=
+python wrf.py 7tiptree.tre outtree200nogap* | grep RF=
+python wrf.py 7tiptree.tre outtree500nogap* | grep RF=
+python wrf.py 7tiptree.tre outtree1000nogap* | grep RF=
+#
+python wrf.py 7tiptree.tre outtree1nogkm* | grep RF=
+python wrf.py 7tiptree.tre outtree2nogkm* | grep RF=
+python wrf.py 7tiptree.tre outtree5nogkm* | grep RF=
+python wrf.py 7tiptree.tre outtree10nogkm* | grep RF=
+python wrf.py 7tiptree.tre outtree20nogkm* | grep RF=
+python wrf.py 7tiptree.tre outtree50nogkm* | grep RF=
+python wrf.py 7tiptree.tre outtree100nogkm* | grep RF=
+python wrf.py 7tiptree.tre outtree200nogkm* | grep RF=
+python wrf.py 7tiptree.tre outtree500nogkm* | grep RF=
+python wrf.py 7tiptree.tre outtree1000nogkm* | grep RF=

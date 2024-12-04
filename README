@@ -1,30 +1,53 @@
-To simulate data for the topic modelling paper use these scripts:
+Simulations for the Topic modeling paper:
+[the directory old contains an earlier coalescent-simulator, in a major revision we replaced that with the current one using the sofware DAWG, see below]
 
-python generator.py Theta divergence_time number_loci
+Simulation of sequences from a tree with gaps
+using the software DAWG (1).
 
-to run the script you need the manyloci.py and a modified version of ms (see instructions
-on https://github.com/pbeerli/divergencesupplement/tree/main/simulations)
-to then generate the inputfiles for the topiccontml.py (see https://github.com/TaraKhodaei/TopicContml)
-you will need to run migrate-modern-to-single-locus.py on each of the files generated with generator.py
+1. Download DAWG from https://github.com/CartwrightLab/dawg.git
+2. Install dawg (follow the gihub instructions)
+3. There are two sets of runX: run7 and run14, for recreating our table you will
+   need to create the following directory:
+   7tip-1000
+   7tip-1000-moreindel
+   14tip-1000
+   14tip-1000-moreindel
+4. For each directory:
+   #a.
+   cd 7tip-1000;
+   cp ../*.py .;cp ../run .; cp ../7tiptree.tre; cp ../run7 .;
+   cp ../dna-with-gaps.dawg .
+   . run7
+   cd ..
+   #b.
+   cd 7tip-1000-moreindel;
+   cp ../*.py .;cp ../run .; cp ../7tiptree.tre; cp ../run7 .;
+   cp ../dna-with-more-gaps.dawg dna-with-gaps.dawg
+   . run7
+   #c.
+   cd 7tip-1000;
+   cp ../*.py .;cp ../run .; cp ../14tiptree.tre; cp ../run14 .;
+   cp ../dna-with-gaps.dawg .
+   . run14
+   cd ..
+   #d.
+   cd 7tip-1000-moreindel;
+   cp ../*.py .;cp ../run .; cp ../14tiptree.tre; cp ../run14 .;
+   cp ../dna-with-more-gaps.dawg dna-with-gaps.dawg
+   . run14
+   cd ..
+5. Collect the information for the table   
+   #a.
+   cd 7tip-1000; . ./gettable > rawresults-7tip-1000
+   ...
+   #do this for every directory the rawresults now contain the values that we show in the table
+   #the raw results are ordered bu loci 1,2,5,10,20,...1000
+   # the table contain the highlighted parts for all 1..1000 loci.
+   # example
+   #                     +++                        +++++++++++
+   # RF=2/10,RF<=2,4,6,8:0.5 0.9 1.0 1.0, mean(wRF)=1.130189611
 
-An example:
 
-mkdir sim_100_0.01_10
-cp generator.py sim_100_0.01_10
-cp ms sim_100_0.01_10
-cp manyloci.py sim_100_0.01_10
-cp migrate-modern-to-single-locus.py sim_100_0.01_10
-cd sim_100_0.01_100
-python generator.py 0.1 0.01 10
-# this will generate 100 datafiles (infile...)
-# each with 10 loci 
-# for each datafile run
-# python migrate-modern-to-single-locus.py infile_...
-# for example:
-python migrate-modern-to-single-locus.py infile_72_0.1_0.01_10
-# this will create a directory siminfile_72_0.1_0.01_10
-# that then can be used for run with topiccontml.py
-# python topiccontml.py -f siminfile_72_0.1_0.01_10
 
-We also added an additional_scripts folder containing coverter scripts for the biological datasets used in the manuscript.
-
+[1] Reed A Cartwright, DNA assembly with gaps (Dawg):
+      simulating sequence evolution, Bioinformatics 21, Suppl 3 (2005), iii31–8.
